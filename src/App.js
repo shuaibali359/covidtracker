@@ -5,7 +5,7 @@ const App = () => {
   const [record, setRecord] = useState([]);
    const [currentPage, setCurrentPage] = useState(0);
   useEffect( async () => {
-    const res = await fetch('https://api.covid19india.org/data.json')
+    const res = await fetch('https://api.covidtracking.com/v1/status.json')
     const actualData = await res.json();
     const data = actualData.statewise[currentPage];
     setRecord(data);
